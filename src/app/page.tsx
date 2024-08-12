@@ -1,112 +1,100 @@
 import Image from "next/image";
+import { HiMiniArrowRight } from "react-icons/hi2";
+import {
+  HiOutlineSparkles,
+  HiOutlineShieldCheck,
+  HiOutlineBell,
+} from "react-icons/hi";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:size-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <main className="relative bg-gradient-to-br w-full from-sky-50 to-white min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Decorative Background Lines */}
+      <div className="absolute inset-0">
+        <div className="h-full w-full bg-gradient-to-br from-transparent via-sky-100 to-transparent">
+          <div className="absolute top-0 left-0 h-full w-full bg-opacity-20 bg-gradient-to-br from-transparent via-sky-300 to-transparent"></div>
+        </div>
+
+        {/* Background Elements */}
+        <div className="absolute rounded-full border-blue-500 border-4 bg-white w-20 h-20 flex items-center justify-center text-blue-500 font-bold text-lg shadow-lg left-10 top-10 animate-bounce">
+          100%
+        </div>
+
+        <div className="absolute bg-white shadow-lg rounded-lg p-4 w-60 top-64 right-52 animate-fade-in">
+          <p className="text-gray-700 font-semibold">New Update Available</p>
+          <p className="text-gray-500 text-sm mt-1">
+            A new version of the UI Kit is now available. Update now to get the
+            latest features.
+          </p>
+        </div>
+        <div className="absolute bg-gradient-to-r from-green-400 to-teal-500 text-white p-2 rounded-lg shadow-lg w-52 top-64 left-16 animate-slide-in-left">
+          <p className="font-semibold">Success</p>
+          <p className="text-sm">Your action was successful!</p>
+        </div>
+        <div className="absolute bg-red-400 text-white p-4 rounded-lg shadow-lg w-60 bottom-20 right-10 animate-slide-in-right">
+          <p className="font-semibold">Alert</p>
+          <p className="text-sm">Something went wrong!</p>
+        </div>
+
+        {/* Additional Background Elements */}
+        <div className="absolute bg-blue-500 text-white p-2 rounded-full shadow-lg bottom-32 left-8 flex items-center gap-2 animate-pulse">
+          <HiOutlineSparkles size={20} />
+          <p className="font-semibold">Feature</p>
+        </div>
+        <div className="absolute bg-yellow-400 text-white p-2 rounded-full shadow-lg top-20 right-2/4 flex items-center gap-2 animate-pulse">
+          <HiOutlineShieldCheck size={20} />
+          <p className="font-semibold">Security</p>
+        </div>
+        <div className="absolute bg-indigo-500 text-white p-2 rounded-full shadow-lg top-24 right-16 flex items-center gap-2 animate-pulse">
+          <HiOutlineBell size={20} />
+          <p className="font-semibold">Notification</p>
         </div>
       </div>
 
-      <div className="relative z-[-1] flex place-items-center before:absolute before:h-[300px] before:w-full before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 sm:before:w-[480px] sm:after:w-[240px] before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+      {/* Content */}
+      <div className="relative z-10 flex justify-between w-full max-w-7xl px-6 lg:px-8">
+        <div className="flex justify-center items-center flex-1">
+          <div className="animate-fade-in-down">
+            <p className="text-sky-500 font-bold text-left text-lg">UI Kit</p>
+            <p className="text-6xl font-extrabold mt-2 -ml-1 leading-tight text-gray-800">
+              Tailwind CSS UI
+            </p>
+            <p className="text-2xl font-medium mt-4 text-gray-600 max-w-md">
+              Newly updated Tailwind CSS UI kit with a library of variables.
+            </p>
+            <div className="flex gap-2 -ml-1 flex-wrap mt-8">
+              {[
+                "Cards",
+                "Dropdowns",
+                "Profile",
+                "Avatar",
+                "Navbar",
+                "Lists",
+              ].map((item: string) => (
+                <div
+                  key={item}
+                  className="py-2 px-6 font-medium text-white bg-gradient-to-r from-sky-500 to-cyan-500 shadow-md border-2 border-transparent transition-all duration-500 hover:bg-transparent hover:bg-none hover:text-sky-900 hover:border-sky-900 rounded-full text-center animate-fade-in"
+                >
+                  {item}
+                </div>
+              ))}
 
-      <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-balance text-sm opacity-50">
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
+              <p className="font-bold italic text-sky-500 py-1 border-2 border-transparent text-lg px-4 animate-fade-in">
+                + more
+              </p>
+            </div>
+            <div className="flex mt-10 gap-4 lg:gap-8 animate-fade-in-up">
+              <button className="py-4 flex gap-4 items-center text-xl px-8 bg-gradient-to-r from-cyan-500 to-sky-500 rounded-md font-semibold text-white shadow-lg hover:shadow-2xl transform hover:scale-105 transition-transform duration-300">
+                <span>Get Started</span>
+                <HiMiniArrowRight size={25} />
+              </button>
+              <button className="py-4 flex gap-4 items-center text-xl px-8 bg-transparent border-2 border-sky-900 rounded-md font-semibold text-sky-900 hover:text-white shadow-lg hover:bg-cyan-500 hover:border-transparent transform hover:scale-105 transition-transform duration-300">
+                <span>Learn More</span>
+                <HiMiniArrowRight size={25} />
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
     </main>
   );
